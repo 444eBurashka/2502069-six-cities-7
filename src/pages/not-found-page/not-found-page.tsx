@@ -1,3 +1,6 @@
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
+
 function NotFoundPage(): JSX.Element {
   return (
     <div className="page page--gray">
@@ -5,9 +8,9 @@ function NotFoundPage(): JSX.Element {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <a className="header__logo-link" href="/">
+              <Link className="header__logo-link" to={AppRoute.Main}>
                 <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -15,8 +18,9 @@ function NotFoundPage(): JSX.Element {
 
       <main className="page__main">
         <div className="container">
-          <h1>404. Page not found</h1>
-          <a href="/">Go to main page</a>
+          <h1>404 Not Found</h1>
+          <p>Sorry, the page you are looking for does not exist.</p>
+          <Link to={AppRoute.Main}>Go to main page</Link>
         </div>
       </main>
     </div>
